@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mars Rover Photo Explorer</title>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<form id="MyForm" onsubmit="return false">
+		<h1>Mars Rover Photo Explorer</h1>
+
+		<table>
+			<tr>
+				<th>Rover</th><th>Mission Start</th><th>Mission End</th>
+			</tr>
+			<tr>
+				<td>Curiosity</td><td>08/06/2012</td><td>09/28/2019</td>
+			</tr>
+			<tr>
+				<td>Opportunity</td><td>01/26/2004</td><td>06/11/2018</td>
+			</tr>
+			<tr>
+				<td>Spirit</td><td>01/05/2004</td><td>03/21/2004</td>
+			</tr>
+		</table>
+		<h2>Select a rover and a picture date:</h2>
+		<label class="formlabel">Rover: </label>
+		<label for="Curiosity"><input type="radio" name="myRover" id="Curiosity" value="curiosity"
+		data-rule-required="true" data-msg-required="A Rover is Required" onchange="DefaultDate()">Curiosity</label>
+		<label for="Opportunity"><input type="radio" name="myRover" id="Opportunity" value="opportunity" onchange="DefaultDate()">Opportunity</label>
+		<label for="Spirit"><input type="radio" name="myRover" id="Spirit" value="spirit" onchange="DefaultDate()">Spirit</label>
+		<label id="RoverError" for="myRover" class="error"></label><br>
+		<label class="formlabel">Picture Date:</label>
+  		<input type="date" name="PictureDate" id="PictureDate" data-rule-required="true" data-msg-required="Date is Required">
+		<label id="PictureDateError" for="PictureDate" class="error"></label><br>
+ 		<br>
+		<button onclick="GetData()">Search</button>
+		<button onclick="ClearForm()" formnovalidate>Clear</button>
+		<p id="PhotosFound"></p>
+		<hr>
+		<p>Click a photo to display full size</p>
+		<a id="anchor0"  target="_blank"><img id="image0"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor1"  target="_blank"><img id="image1"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor2"  target="_blank"><img id="image2"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor3"  target="_blank"><img id="image3"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor4"  target="_blank"><img id="image4"  class="MarsPhoto"  height="100" width="100"></a><br>
+		<a id="anchor5"  target="_blank"><img id="image5"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor6"  target="_blank"><img id="image6"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor7"  target="_blank"><img id="image7"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor8"  target="_blank"><img id="image8"  class="MarsPhoto"  height="100" width="100"></a>
+		<a id="anchor9"  target="_blank"><img id="image9"  class="MarsPhoto"  height="100" width="100"></a><br>
+		<a id="anchor10" target="_blank"><img id="image10" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor11" target="_blank"><img id="image11" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor12" target="_blank"><img id="image12" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor13" target="_blank"><img id="image13" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor14" target="_blank"><img id="image14" class="MarsPhoto" height="100" width="100"></a><br>
+		<a id="anchor15" target="_blank"><img id="image15" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor16" target="_blank"><img id="image16" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor17" target="_blank"><img id="image17" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor18" target="_blank"><img id="image18" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor19" target="_blank"><img id="image19" class="MarsPhoto" height="100" width="100"></a><br>
+		<a id="anchor20" target="_blank"><img id="image20" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor21" target="_blank"><img id="image21" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor22" target="_blank"><img id="image22" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor23" target="_blank"><img id="image23" class="MarsPhoto" height="100" width="100"></a>
+		<a id="anchor24" target="_blank"><img id="image24" class="MarsPhoto" height="100" width="100"></a>
+	</form>	
+ </body>
+</html>
