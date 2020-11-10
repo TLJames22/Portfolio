@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Unit Conversion Calculator">
+    <meta name="keywords" content="JavaScript, HTML, CSS">
+    <meta name="author" content="Trevor James">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- https://cdnjs.com/libraries/moment.js/ -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+	<!-- "https://cdnjs.com/libraries/Chart.js" -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+
+<body>
+  <a href="../index.html">Home</a>
+<form id="myform" onsubmit="return false">
+    <div class="formcontainer">
+        <h1>Currency Value History</h1>
+        <fieldset id="detail">
+            <legend>Calculator (AJAX)</legend>  
+            <br>
+    
+<label>Base Currency: </label>
+<select name="selbase" id="basecurrency"                
+        data-rule-required="true" data-msg-required="Base Currency is Required">
+    <option value="">Select an Base Currency...</option>
+    <option value="USD">United States Dollar</option>
+    <option value="JPY">Japenese Yen</option>
+    <option value="CAD">Canadian Dollar</option>
+    <option value="BHD">Bahraini Dinar</option>
+     <option value="EUR">Euro Dollar</option>
+      <option value="INR">Idian Rupee</option>
+</select>
+<label for="basecurrency" class="error"></label>
+<br><br>
+
+<label>Convert to Currency: </label>
+<select name="selbase" id="convertcurrency"                
+        data-rule-required="true" data-msg-required="Base Currency is Required">
+    <option value="">Select an Base Currency...</option>
+    <option value="USD">United States Dollar</option>
+    <option value="JPY">Japenese Yen</option>
+    <option value="CAD">Canadian Dollar</option>
+    <option value="BHD">Bahraini Dinar</option>
+     <option value="EUR">Euro Dollar</option>
+      <option value="INR">Idian Rupee</option>
+</select>
+<label for="convertcurrency" class="error"></label>
+ <br><br>   
+
+<label for="fromdate">From Date:</label>
+<input type="date" id="fromdate" name="fromdate" 
+       data-rule-required="true" data-rule-date="true" data-msg-date="Date must be MM/DD/YYYY format" 
+>
+
+<label for="fromdate" class="error"></label><br>
+<br>
+
+<label for="todate">To Date:</label>
+<input type="date" id="todate" name="todate" 
+       data-rule-required="true" data-rule-date="true" data-msg-date="Date must be MM/DD/YYYY format" 
+>
+
+<label for="todate" class="error"></label><br>
+<br>
+
+ <input type="submit" value="Calculate" id="btnSubmit" name="Calculate" onclick="calculate();">
+
+<input type="submit" value="Clear" id="btnSubmit" name="Clear" onclick="clearform();" formnovalidate > 
+<br>
+	<canvas id="chartjs-0" width="400" height="400"></canvas>
+
+</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- https://cdnjs.com/libraries/moment.js/ -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+	<!-- "https://cdnjs.com/libraries/Chart.js" -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+</body>
